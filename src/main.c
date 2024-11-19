@@ -16,7 +16,7 @@
 #include "disparitySelect.h"
 #include "medianFilter.h"
 #include "md5.h"
-
+#include "projet.h"
 
 int stopThreads = 0;
 
@@ -32,17 +32,32 @@ int main(void) {
 	displayRGBInit(1, HEIGHT, WIDTH);
 
 	while (!stopThreads) {
-
 		// Read images
 		static unsigned char yL[HEIGHT * WIDTH], uL[HEIGHT * WIDTH / 4], vL[HEIGHT * WIDTH / 4];
 		static unsigned char yR[HEIGHT * WIDTH], uR[HEIGHT * WIDTH / 4], vR[HEIGHT * WIDTH / 4];
-		readYUV(0, WIDTH, HEIGHT, yL, uL, vL);
-		readYUV(1, WIDTH, HEIGHT, yR, uR, vR);
+		//readYUV(0, WIDTH, HEIGHT, yL, uL, vL);
+		//readYUV(1, WIDTH, HEIGHT, yR, uR, vR);
+		#pragma omp parallel sections default(none) shared(yL, uL, vL, yR, uR, vR) num_threads(2)
+		{
+			#pragma omp section
+			readYUV(0, WIDTH, HEIGHT, yL, uL, vL);
+			#pragma omp section
+			readYUV(1, WIDTH, HEIGHT, yR, uR, vR);
+		}
 
 		// Convert images to RGB
 		static unsigned char rgbL[HEIGHT * WIDTH * 3], rgbR[HEIGHT * WIDTH * 3];
 		yuv2rgb(WIDTH, HEIGHT, yL, uL, vL, rgbL);
 		yuv2rgb(WIDTH, HEIGHT, yR, uR, vR, rgbR);
+		/*
+		#pragma omp parallel sections default(none) shared(yL, uL, vL, rgbL, yR, uR, vR, rgbR) num_threads(NUM_THREADS)
+		{
+			#pragma omp section
+			yuv2rgb(WIDTH, HEIGHT, yL, uL, vL, rgbL);
+			#pragma omp section
+			yuv2rgb(WIDTH, HEIGHT, yR, uR, vR, rgbR);
+		}
+		*/
 
 		// Convert to gray
 		static float grayL[HEIGHT * WIDTH], grayR[HEIGHT * WIDTH];

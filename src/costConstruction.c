@@ -12,6 +12,7 @@
 
 #include "costConstruction.h"
 #include <math.h>
+#include "projet.h"
 
 #define min(x,y) (((x)<(y))?(x):(y))
 
@@ -42,19 +43,20 @@ void costConstruction (int height, int width, float truncValue,
     int i,j;
 
     // For each disparity, scan the pixels of the left image
-    for(j=0; j<height; j++)
+    #pragma omp parallel for private(i, j) num_threads(NUM_THREADS) schedule(dynamic)
+    for (j = 0; j < height; j++)
     {
-        for(i=0; i<width; i++)
+        for (i = 0; i < width; i++)
         {
             unsigned char censusCost;
-            int leftPxlIdx = j*width + i;
-            int rightPxlIdx = j*width + (((i-*disparity)>0)?i-*disparity:0);
+            int leftPxlIdx = j * width + i;
+            int rightPxlIdx = j * width + (((i - *disparity) > 0) ? i - *disparity : 0);
 
             // Get the cost from the census signatures
-            censusCost = hammingCost(cenL+leftPxlIdx, cenR+rightPxlIdx);
+            censusCost = hammingCost(cenL + leftPxlIdx, cenR + rightPxlIdx);
 
             // Combination method 3 -- weight addition
-            disparityError[leftPxlIdx] =  min((float)fabs((float)(grayL[leftPxlIdx]-grayR[rightPxlIdx])),truncValue) + censusCost/5.0f;
+            disparityError[leftPxlIdx] = min((float)fabs((float)(grayL[leftPxlIdx] - grayR[rightPxlIdx])), truncValue) + censusCost / 5.0f;
         }
     }
 }

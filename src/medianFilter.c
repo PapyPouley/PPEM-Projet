@@ -11,7 +11,7 @@
 #include "medianFilter.h"
 #define min(x,y) (((x)<(y))?(x):(y))
 #define max(x,y) (((x)<(y))?(y):(x))
-
+#include "projet.h"
 
 void swap(unsigned char *a, unsigned char *b){
 	unsigned char buf = *a;
@@ -50,6 +50,7 @@ void medianFilter (int height , int width, int topDownBorderSize,
 	int i,j;
 	int k,l;
 	// Process pixels one by one
+	#pragma omp parallel for private(i, j, k, l) num_threads(NUM_THREADS) schedule(dynamic)
 	for(j=topDownBorderSize; j< height-topDownBorderSize; j++){
 		for(i=0;i<width;i++){
 			unsigned char pixels[9];

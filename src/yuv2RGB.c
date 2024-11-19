@@ -9,6 +9,7 @@
 */
 
 #include "yuv2RGB.h"
+#include "projet.h"
 
 #define YUV2RGB_COEF_R  1.13983
 #define YUV2RGB_COEF_G1 0.39465
@@ -17,10 +18,10 @@
 
 #define clamp(x) (x>255)? 255 : ((x<0)? 0 : x);
 
-void yuv2rgb(int width, int height, unsigned char *y, unsigned char *u, unsigned char *v, unsigned char *rgb){
+void yuv2rgb(int width, int height, unsigned char *y, unsigned char *u, unsigned char *v, unsigned char *rgb) {
     int i,j;
-    for(i=0; i< height; i++){
-        for(j=0; j < width; j++){
+	for(i=0; i < height; i++) {
+		for(j=0; j < width; j++) {
 			int idx = i*width + j;
 			int idxUV = i/2*width/2 + j/2;
 
@@ -32,11 +33,11 @@ void yuv2rgb(int width, int height, unsigned char *y, unsigned char *u, unsigned
 			d = d -128;
 			e = e -128;
 
-            *(rgb + 3*idx+0) = (unsigned char) clamp((298*c+409*e+128)>>8);
-            *(rgb + 3*idx+1) = (unsigned char) clamp((298*c-100*d-208*e+128)>>8);
-            *(rgb + 3*idx+2) = (unsigned char) clamp((298*c+516*d+128)>>8);
+			*(rgb + 3*idx+0) = (unsigned char) clamp((298*c+409*e+128)>>8);
+			*(rgb + 3*idx+1) = (unsigned char) clamp((298*c-100*d-208*e+128)>>8);
+			*(rgb + 3*idx+2) = (unsigned char) clamp((298*c+516*d+128)>>8);
 
 		}
-    }
+	}
 }
 
