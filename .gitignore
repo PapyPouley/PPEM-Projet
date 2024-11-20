@@ -1,4 +1,1 @@
-/bin
-/dat
-/lib/*
-!/lib/cmake_modules
+WinPara/bin
