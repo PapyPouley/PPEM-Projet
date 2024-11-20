@@ -1,0 +1,24 @@
+
+**** Build of configuration Debug for project stereo_c6678 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ti-cgt-c6000_8.1.0/bin/cl6x" -mv6600 --include_path="C:/ti/ti-cgt-c6000_8.1.0/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --openmp --preproc_with_compile --preproc_dependency="main.d" --cmd_file="configPkg/compiler.opt" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building file: ../yuv2RGB.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ti-cgt-c6000_8.1.0/bin/cl6x" -mv6600 --include_path="C:/ti/ti-cgt-c6000_8.1.0/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --openmp --preproc_with_compile --preproc_dependency="yuv2RGB.d" --cmd_file="configPkg/compiler.opt" "../yuv2RGB.c"
+'Finished building: ../yuv2RGB.c'
+' '
+'Building target: stereo_c6678.out'
+'Invoking: C6000 Linker'
+"C:/ti/ti-cgt-c6000_8.1.0/bin/cl6x" -mv6600 -g --diag_warning=225 --diag_wrap=off --display_error_number --openmp -z -m"stereo_c6678.map" -i"C:/ti/ti-cgt-c6000_8.1.0/lib" -i"C:/ti/ti-cgt-c6000_8.1.0/include" --reread_libs --priority --diag_wrap=off --display_error_number --warn_sections --xml_link_info="stereo_c6678_linkInfo.xml" --rom_model -o "stereo_c6678.out" "./aggregateCost.obj" "./census.obj" "./computeWeights.obj" "./costConstruction.obj" "./disparitySelect.obj" "./main.obj" "./medianFilter.obj" "./offsetGen.obj" "./rgb2Gray.obj" "./yuv2RGB.obj" "./yuvRead.obj" -l"configPkg/linker.cmd" -llibc.a 
+<Linking>
+warning #10247-D: creating output section ".tdata" without a SECTIONS specification
+warning #10247-D: creating output section ".tbss" without a SECTIONS specification
+'Finished building target: stereo_c6678.out'
+' '
+
+**** Build Finished ****

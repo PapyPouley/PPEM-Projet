@@ -1,0 +1,16 @@
+nov. 19, 2024 4:01:58 PM org.eclipse.rtsc.xdctools.ui.registry.RtscProduct getPlatforms
+AVERTISSEMENT: Invalid module:ti.catalog.arm.cortexm3.TMS320DM813X
+nov. 19, 2024 4:01:58 PM org.eclipse.rtsc.xdctools.ui.registry.RtscProduct getPlatforms
+AVERTISSEMENT: Platform ti.sdo.ipc.examples.platforms.evmTI813X.vpss cannot be resolved
+nov. 19, 2024 4:01:58 PM org.eclipse.rtsc.xdctools.ui.registry.RtscProduct getPlatforms
+AVERTISSEMENT: Invalid module:ti.catalog.arm.cortexa8.TMS320DM813X
+nov. 19, 2024 4:01:58 PM org.eclipse.rtsc.xdctools.ui.registry.RtscProduct getPlatforms
+AVERTISSEMENT: Platform ti.sdo.ipc.examples.platforms.evmTI813X.host cannot be resolved
+nov. 19, 2024 4:01:58 PM org.eclipse.rtsc.xdctools.ui.registry.RtscProduct getPlatforms
+AVERTISSEMENT: Invalid module:ti.catalog.arm.cortexm3.TMS320DM813X
+nov. 19, 2024 4:01:58 PM org.eclipse.rtsc.xdctools.ui.registry.RtscProduct getPlatforms
+AVERTISSEMENT: Platform ti.sdo.ipc.examples.platforms.evmTI813X.video cannot be resolved
+nov. 19, 2024 4:01:58 PM org.eclipse.rtsc.xdctools.ui.registry.RtscProduct getPlatforms
+AVERTISSEMENT: Invalid module:ti.catalog.arm.cortexa15.OMAP5430
+nov. 19, 2024 4:01:58 PM org.eclipse.rtsc.xdctools.ui.registry.RtscProduct getPlatforms
+AVERTISSEMENT: Platform ti.platforms.sdp5430 cannot be resolved

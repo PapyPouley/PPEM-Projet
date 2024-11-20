@@ -1,0 +1,131 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CFG_SRCS += \
+../omp_config.cfg 
+
+C_SRCS += \
+../aggregateCost.c \
+../census.c \
+../clock.c \
+../computeWeights.c \
+../costConstruction.c \
+../disparitySelect.c \
+../displayRGB.c \
+../main.c \
+../md5.c \
+../medianFilter.c \
+../offsetGen.c \
+../omp_hello.c \
+../rgb2Gray.c \
+../yuv2RGB.c \
+../yuvRead.c 
+
+OBJS += \
+./aggregateCost.obj \
+./census.obj \
+./clock.obj \
+./computeWeights.obj \
+./costConstruction.obj \
+./disparitySelect.obj \
+./displayRGB.obj \
+./main.obj \
+./md5.obj \
+./medianFilter.obj \
+./offsetGen.obj \
+./omp_hello.obj \
+./rgb2Gray.obj \
+./yuv2RGB.obj \
+./yuvRead.obj 
+
+C_DEPS += \
+./aggregateCost.d \
+./census.d \
+./clock.d \
+./computeWeights.d \
+./costConstruction.d \
+./disparitySelect.d \
+./displayRGB.d \
+./main.d \
+./md5.d \
+./medianFilter.d \
+./offsetGen.d \
+./omp_hello.d \
+./rgb2Gray.d \
+./yuv2RGB.d \
+./yuvRead.d 
+
+GEN_MISC_DIRS += \
+./configPkg/ 
+
+GEN_CMDS += \
+./configPkg/linker.cmd 
+
+GEN_OPTS += \
+./configPkg/compiler.opt 
+
+GEN_FILES += \
+./configPkg/linker.cmd \
+./configPkg/compiler.opt 
+
+GEN_FILES__QUOTED += \
+"configPkg\linker.cmd" \
+"configPkg\compiler.opt" 
+
+GEN_MISC_DIRS__QUOTED += \
+"configPkg\" 
+
+C_DEPS__QUOTED += \
+"aggregateCost.d" \
+"census.d" \
+"clock.d" \
+"computeWeights.d" \
+"costConstruction.d" \
+"disparitySelect.d" \
+"displayRGB.d" \
+"main.d" \
+"md5.d" \
+"medianFilter.d" \
+"offsetGen.d" \
+"omp_hello.d" \
+"rgb2Gray.d" \
+"yuv2RGB.d" \
+"yuvRead.d" 
+
+OBJS__QUOTED += \
+"aggregateCost.obj" \
+"census.obj" \
+"clock.obj" \
+"computeWeights.obj" \
+"costConstruction.obj" \
+"disparitySelect.obj" \
+"displayRGB.obj" \
+"main.obj" \
+"md5.obj" \
+"medianFilter.obj" \
+"offsetGen.obj" \
+"omp_hello.obj" \
+"rgb2Gray.obj" \
+"yuv2RGB.obj" \
+"yuvRead.obj" 
+
+C_SRCS__QUOTED += \
+"../aggregateCost.c" \
+"../census.c" \
+"../clock.c" \
+"../computeWeights.c" \
+"../costConstruction.c" \
+"../disparitySelect.c" \
+"../displayRGB.c" \
+"../main.c" \
+"../md5.c" \
+"../medianFilter.c" \
+"../offsetGen.c" \
+"../omp_hello.c" \
+"../rgb2Gray.c" \
+"../yuv2RGB.c" \
+"../yuvRead.c" 
+
+

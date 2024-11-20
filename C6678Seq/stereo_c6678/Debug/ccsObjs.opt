@@ -1,0 +1,1 @@
+"./aggregateCost.obj" "./census.obj" "./computeWeights.obj" "./costConstruction.obj" "./disparitySelect.obj" "./main.obj" "./medianFilter.obj" "./offsetGen.obj" "./rgb2Gray.obj" "./yuv2RGB.obj" "./yuvRead.obj" -l"configPkg/linker.cmd" -llibc.a 
